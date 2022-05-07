@@ -1,11 +1,11 @@
-require_relative "boot"
+require_relative 'boot'
 
-require "rails/all"
+require 'rails/all'
 
 # Require the gems listed in Gemfile, including any gems
 # you've limited to :test, :development, or :production.
 Bundler.require(*Rails.groups)
-require "atomic_lti_1v1"
+require 'atomic_lti_1v1'
 
 module Dummy
   class Application < Rails::Application
