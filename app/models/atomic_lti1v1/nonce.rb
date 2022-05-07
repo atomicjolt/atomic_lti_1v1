@@ -1,7 +1,5 @@
 module AtomicLti1v1
   class Nonce < ApplicationRecord
-
-    # TODO 
     def self.valid?(nonce)
       create!(nonce: nonce)
       true
