@@ -1,7 +1,7 @@
 PATH
   remote: .
   specs:
-    atomic_lti_1v1 (0.1.0)
+    atomic_lti_1v1 (1.0.0)
       ims-lti (~> 2.1.5)
       rails (>= 6.1.3)
 
