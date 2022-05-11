@@ -6,6 +6,4 @@ module AtomicLti1v1
   mattr_accessor :secret_provider
 
   class LtiValidationFailed < StandardError; end
-
-  # Your code goes here...
 end
