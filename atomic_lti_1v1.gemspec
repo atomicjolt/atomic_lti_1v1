@@ -5,9 +5,9 @@ Gem::Specification.new do |spec|
   spec.version     = AtomicLti1v1::VERSION
   spec.authors     = ['Nick Benoit']
   spec.email       = ['nick.benoit@atomicjolt.com']
-  spec.homepage    = 'https://example.com'
-  spec.summary     = 'Summary of AtomicLti1v1.'
-  spec.description = 'Description of AtomicLti1v1.'
+  spec.homepage    = 'https://github.com/atomicjolt/atomic_lti_1v1'
+  spec.summary     = 'Rack middleware to handle validating Lti 1.1 requests'
+  spec.description = 'Rack middleware to handle validating Lti 1.1 requests'
   spec.license = 'MIT'
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the "allowed_push_host"
