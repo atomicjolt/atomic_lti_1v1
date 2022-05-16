@@ -12,8 +12,8 @@ gem 'sprockets-rails'
 # gem "debug", ">= 1.0.0"
 
 group :development, :test do
-  gem "byebug", platform: :mri
-  gem "rspec-rails"
+  gem 'byebug', platform: :mri
+  gem 'rspec-rails'
 
-  gem "ims-lti", '~> 2.1.5' # IMS LTI tool consumers and providers
+  gem 'ims-lti', '~> 2.1.5' # IMS LTI tool consumers and providers
 end

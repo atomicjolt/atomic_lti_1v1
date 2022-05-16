@@ -10,12 +10,11 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[7.0].define(version: 2022_05_07_041217) do
-  create_table "atomic_lti1v1_nonces", force: :cascade do |t|
-    t.string "nonce"
-    t.datetime "created_at", null: false
-    t.datetime "updated_at", null: false
-    t.index ["nonce"], name: "index_atomic_lti1v1_nonces_on_nonce", unique: true
+ActiveRecord::Schema[7.0].define(version: 20_220_507_041_217) do
+  create_table 'atomic_lti1v1_nonces', force: :cascade do |t|
+    t.string 'nonce'
+    t.datetime 'created_at', null: false
+    t.datetime 'updated_at', null: false
+    t.index ['nonce'], name: 'index_atomic_lti1v1_nonces_on_nonce', unique: true
   end
-
 end

@@ -14,12 +14,11 @@ module AtomicLti1v1
                                                                    lti_secret)
 
       result = authenticator.valid_signature? && AtomicLti1v1::Nonce.valid?(request.params['oauth_nonce'])
-      if validate_timestamp 
+      if validate_timestamp
         result && valid_timestamp?(request)
       else
         result
       end
-
     end
   end
 end
