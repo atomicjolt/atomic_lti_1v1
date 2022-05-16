@@ -200,6 +200,7 @@ PLATFORMS
 DEPENDENCIES
   atomic_lti_1v1!
   byebug
+  ims-lti (~> 2.1.5)
   rspec-rails
   sprockets-rails
   sqlite3

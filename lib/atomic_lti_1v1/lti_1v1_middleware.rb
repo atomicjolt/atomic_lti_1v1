@@ -21,7 +21,8 @@ module AtomicLti1v1
           end
         end
 
-        if lti_secret.present? && AtomicLti1v1::Lti1v1.valid_lti_request?(request, lti_secret)
+        should_validate_timestamp = !AtomicLti1v1.skip_timestamp_validation
+        if lti_secret.present? && AtomicLti1v1::Lti1v1.valid_lti_request?(request, lti_secret, validate_timestamp: should_validate_timestamp)
           env['atomic.validated.oauth_consumer_key'] = oauth_consumer_key
         elsif lti_secret.present? && !AtomicLti1v1::Lti1v1.valid_lti_request?(request, lti_secret)
           raise AtomicLti1v1::LtiValidationFailed, "Validation failed for oauth_consumer_key: #{oauth_consumer_key}"
