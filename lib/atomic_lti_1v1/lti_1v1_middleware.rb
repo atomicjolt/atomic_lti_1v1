@@ -6,6 +6,8 @@ module AtomicLti1v1
     end
 
     def call(env)
+      begin # For now catch all errors, after we are fully commited this wont be necessary
+
       request = Rack::Request.new(env)
       if AtomicLti1v1::Lti1v1.is_lti_1v1?(request)
         oauth_consumer_key = request.params['oauth_consumer_key']
@@ -28,7 +30,13 @@ module AtomicLti1v1
         end
       end
 
-      @app.call(env)
+      rescue StandardError => e # For now catch all errors
+        Rails.logger.warn("Error in LTI 1v1 Middleware: #{e}")
+      ensure
+        @app.call(env)
+      end
+
+      #@app.call(env)
     end
   end
 end
