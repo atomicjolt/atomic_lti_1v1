@@ -32,11 +32,9 @@ module AtomicLti1v1
 
       rescue StandardError => e # For now catch all errors
         Rails.logger.warn("Error in LTI 1v1 Middleware: #{e}")
-      ensure
-        @app.call(env)
       end
 
-      #@app.call(env)
+      @app.call(env)
     end
   end
 end
