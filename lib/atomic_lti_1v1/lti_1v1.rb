@@ -1,7 +1,10 @@
 module AtomicLti1v1
   class Lti1v1
     def self.is_lti_1v1?(request)
-      request.params['oauth_consumer_key'].present?
+      contains_oauth_consumer_key = request.params['oauth_consumer_key'].present? 
+      path_matches = request.env["PATH_INFO"].match(AtomicLti1v1.lti_launch_path_regex)&.size == 1
+
+      path_matches && contains_oauth_consumer_key
     end
 
     def self.valid_timestamp?(request)
