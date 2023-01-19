@@ -87,9 +87,9 @@ GEM
       multipart-post (>= 1.2, < 3)
     faraday_middleware (0.14.0)
       faraday (>= 0.7.4, < 1.0)
-    globalid (1.0.0)
+    globalid (1.0.1)
       activesupport (>= 5.0)
-    i18n (1.10.0)
+    i18n (1.12.0)
       concurrent-ruby (~> 1.0)
     ims-lti (2.1.6)
       addressable (~> 2.5, >= 2.5.1)
@@ -111,7 +111,7 @@ GEM
     marcel (1.0.2)
     method_source (1.0.0)
     mini_mime (1.1.2)
-    minitest (5.15.0)
+    minitest (5.17.0)
     multipart-post (2.1.1)
     net-imap (0.2.3)
       digest
@@ -123,10 +123,10 @@ GEM
       timeout
     net-smtp (0.1.0)
     nio4r (2.5.8)
-    nokogiri (1.13.5-arm64-darwin)
+    nokogiri (1.14.0-x86_64-linux)
       racc (~> 1.4)
     public_suffix (4.0.7)
-    racc (1.6.0)
+    racc (1.6.2)
     rack (2.2.3)
     rack-test (1.1.0)
       rack (>= 1.0, < 3)
@@ -169,7 +169,7 @@ GEM
     strscan (1.0.3)
     thor (1.2.1)
     timeout (0.1.0)
-    tzinfo (2.0.4)
+    tzinfo (2.0.5)
       concurrent-ruby (~> 1.0)
     websocket-driver (0.7.5)
       websocket-extensions (>= 0.1.0)
@@ -177,7 +177,7 @@ GEM
     zeitwerk (2.5.4)
 
 PLATFORMS
-  ruby
+  x86_64-linux
 
 DEPENDENCIES
   atomic_lti_1v1!
