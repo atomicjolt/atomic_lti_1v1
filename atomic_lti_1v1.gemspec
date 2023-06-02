@@ -22,6 +22,7 @@ Gem::Specification.new do |spec|
     Dir['{app,config,db,lib}/**/*', 'MIT-LICENSE', 'Rakefile', 'README.md']
   end
 
-  spec.add_dependency 'ims-lti', '~> 2.1.5' # IMS LTI tool consumers and providers
+  spec.add_development_dependency 'rspec'
+  spec.add_dependency 'ims-lti', '~> 2.3.3' # IMS LTI tool consumers and providers
   spec.add_dependency 'rails', '>= 6.1.3'
 end
