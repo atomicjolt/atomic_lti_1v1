@@ -5,9 +5,15 @@ module AtomicLti1v1
       @app = app
     end
 
+    def matches_path_prefixes?(request)
+      AtomicLti1v1.path_prefixes.any? do |prefix|
+        request.path.starts_with? prefix
+      end
+    end
+
     def call(env)
       request = Rack::Request.new(env)
-      if AtomicLti1v1::Lti1v1.is_lti_1v1?(request)
+      if matches_path_prefixes?(request) && AtomicLti1v1::Lti1v1.is_lti_1v1?(request)
         oauth_consumer_key = request.params['oauth_consumer_key']
 
         lti_secret = nil
