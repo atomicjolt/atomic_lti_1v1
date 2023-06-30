@@ -42,6 +42,8 @@ Provide `secret_provider`
     # If using most Atomic Jolt Apps, probably something like this
     ApplicationInstance.find_by(lti_key: oauth_consumer_key)&.lti_secret 
   end
+  # List of path prefixes to handle. Default is the following:
+  AtomicLti1v1.path_prefixes = ["/lti_launches"] 
   ```
 
 ## License

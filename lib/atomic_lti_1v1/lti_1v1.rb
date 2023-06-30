@@ -1,7 +1,9 @@
 module AtomicLti1v1
   class Lti1v1
     def self.is_lti_1v1?(request)
-      request.params['oauth_consumer_key'].present?
+      request.params['oauth_consumer_key'].present? &&
+        request.params['oauth_signature'].present? &&
+        request.params['lti_version'] == 'LTI-1p0'
     end
 
     def self.valid_timestamp?(request)
