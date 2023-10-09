@@ -32,6 +32,11 @@ module AtomicLti1v1
         elsif lti_secret.present? && !AtomicLti1v1::Lti1v1.valid_lti_request?(request, lti_secret)
           raise AtomicLti1v1::LtiValidationFailed, "Validation failed for oauth_consumer_key: #{oauth_consumer_key}"
         end
+
+        # Let the frontend know there's no state to validate.  This is an LTI 1.3 thing.
+        env["atomic.validated.state_validation"] = {
+          state_verified: true,
+        }
       end
 
       @app.call(env)
