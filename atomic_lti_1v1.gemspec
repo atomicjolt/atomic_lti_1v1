@@ -24,5 +24,5 @@ Gem::Specification.new do |spec|
 
   spec.add_development_dependency 'rspec'
   spec.add_dependency 'ims-lti', '~> 2.3.3' # IMS LTI tool consumers and providers
-  spec.add_dependency 'rails', '>= 6.1.3'
+  spec.add_dependency "rails", "~> 7.0"
 end

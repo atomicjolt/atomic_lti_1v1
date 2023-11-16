@@ -14,3 +14,7 @@ gem 'sprockets-rails'
 group :development, :test do
   gem "byebug", platform: :mri
 end
+
+group :test do
+  gem "rspec-rails"
+end
