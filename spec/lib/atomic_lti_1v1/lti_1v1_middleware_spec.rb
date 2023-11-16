@@ -52,11 +52,19 @@ module AtomicLti1v1
 
         context 'when the LTI request is valid' do
           it 'sets the validated oauth_consumer_key in the env' do
-            expect { middleware.call(request_env) }.to change { request_env['atomic.validated.oauth_consumer_key'] }.from(nil).to(oauth_consumer_key)
+            status, _headers, response = middleware.call(request_env)
+
+            returned_env = response[0]
+            expect(status).to eq(200)
+            expect(returned_env["atomic.validated.oauth_consumer_key"]).to eq(oauth_consumer_key)
           end
 
           it 'sets the state_validation flag to true' do
-            expect { middleware.call(request_env) }.to change { request_env['atomic.validated.state_validation'] }.from(nil).to({ state_verified: true })
+            status, _headers, response = middleware.call(request_env)
+
+            returned_env = response[0]
+            expect(status).to eq(200)
+            expect(returned_env["atomic.validated.state_validation"]).to eq({ state_verified: true })
           end
         end
 
